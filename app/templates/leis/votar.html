@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-8">
+    <div>
+      <h1>{{ lei[0][2] }}</h1>
+    </div>
+    <div>
+      <p>{{ lei[0][3] }}</p>
+    </div>
+
+    <form method="post" action="/comentar/{{lei[0][0]}}">
+      <div class="form-group">
+         <textarea class="form-control" rows="3" placeholder="Comentário" name="id_comentario" id="id_comentario"></textarea>
+         <label for="id_comentario" class="sr-only">Comentário</label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block btn-cadastrar" type="submit">Comentar</button>
+    </form>
+
+    <div>
+      <h4>Comentários</h4>
+      {% if comentarios|length > 0 %}
+      {% for comentario in comentarios %}
+      {% for usuario in usuarios %}
+      {% if comentario[1] == usuario[0] %}
+      <h6>{{ usuario[1] }}</h6>
+      <p>{{ comentario[3] }}</p>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+      {% else %}
+      <h6>Nenhum comentário</h6>
+      {% endif %}
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="voto">
+      <form method="post">
+        <select class="form-control" name="value">
+          <option value="1">Favor</option>
+          <option value="2">Contra</option>
+        </select>
+        <button type="submit" class="btn btn-primary btn-votar">Votar</button>
+      </form>
+
+      <div>
+        <h4>Votos a favor: {{ lei[0][4] }}</h4>
+      </div>
+
+      <div>
+        <h4>Votos contra: {{ lei[0][5] }}</h4>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %} 

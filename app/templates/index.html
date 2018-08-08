@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="title-leis">
+        <h3>Leis em Votação</h3>
+      </div>
+      <table class="table table-hover">
+        {% if leis|length > 0 %}
+        <thead>
+          <tr>
+            <th class="tabela-cab">Título da Lei</th>
+            <th class="tabela-cab">Votos a favor</th>
+            <th class="tabela-cab">Votos Contra</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for lei in leis %}
+          <tr>
+            <td class="tabela-cab"><a href="/lei/{{lei.id_lei}}">{{ lei.titulo }}</a></td>
+            <td class="tabela-cab">{% if lei.votos_favor == None %} 0 {% else %} {{ lei.votos_favor }} {% endif %}</td>
+            <td class="tabela-cab">{% if lei.votos_contra == None %} 0 {% else %} {{ lei.votos_contra }} {% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="text">
+        <h2>Nenhuma lei disponível</h2>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %} 

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-6">
+		<div class="user">
+			<div class="user-img">
+				<img src="/static/imagens/user.png" height="100">
+				<h3><a href="/minhas-leis" class="link">{{usuario[0][1]}}</a></h3>
+			</div>
+			<div class="criar-lei">
+				<a href="/criar-lei"><button type="button" class="btn btn-primary">Criar Lei</button></a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="leis">
+			<div class="titulo">
+				<h3>Minhas Leis</h3>
+				<div class="line-bottom"></div>
+			</div>
+			<div class="lista-leis">
+				{% if leis|length > 0 %}
+				<table class="table table-hover">
+			        <thead>
+			          <tr>
+			            <th class="tabela-cab">Título da Lei</th>
+			            <th class="tabela-cab">Votos a favor</th>
+			            <th class="tabela-cab">Votos contra</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          {% for lei in leis %}
+			          <tr>
+			            <td class="tabela-cab"><a href="/lei/{{lei.id_lei}}">{{ lei.titulo }}</a></td>
+			            <td class="tabela-cab">{% if lei.votos_favor == None %} 0 {% else %} {{ lei.votos_favor }} {% endif %}</td>
+			            <td class="tabela-cab">{% if lei.votos_contra == None %} 0 {% else %} {{ lei.votos_contra }} {% endif %}</td>
+			          </tr>
+			          {% endfor %}
+			        </tbody>
+			      </table>
+				<ul class="list-group">
+				{% else %}
+				<div class="titulo-jogador">
+					<h3>Usuário ainda não cadastrou leis</h3>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock %} 

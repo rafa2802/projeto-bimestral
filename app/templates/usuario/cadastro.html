@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sistema de Votação - Cadastro</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/cadastro.css" rel="stylesheet">
+    <link href="/static/css/login.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <form class="form-signin" method="POST">
+      <div class="text-center mb-4">
+        <img class="mb-4 logo" src="/static/imagens/logo.jpg" alt="" width="72" height="72">
+      </div>
+      {% if error %}
+      <div class="alert alert-danger" role="alert">
+        {{error}} <a href="/login">Fazer login</a>
+      </div>
+      {% endif %}
+      <div class="form-group">
+        <input name="id_nome" type="text" id="id_nome" class="form-control" placeholder="Nome Completo" required autofocus>
+        <label for="id_nome" class="sr-only">Nome Completo</label>
+      </div>
+
+      <div class="form-group">
+        <input name="id_usuario" type="text" id="id_usuario" class="form-control" placeholder="Usuário" required autofocus>
+        <label for="id_usuario" class="sr-only">Usuário</label>
+      </div>
+
+      <div class="form-group">
+        <input name="id_email" type="email" id="id_email" class="form-control" placeholder="E-mail" required autofocus>
+        <label for="id_email" class="sr-only">E-mail</label>
+      </div>
+
+      <div class="form-group">
+        <input name="id_password" type="password" id="id_password" class="form-control" placeholder="Senha" required>
+        <label for="id_password" class="sr-only">Senha</label>
+      </div>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar-se</button>
+      <p class="mt-5 mb-3 text-muted text-center copy">&copy; Sistema de Votação 2018</p>	
+    </form>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+.user { background-color: #F8F9FA; }
+.sair { color: #C82333; }
+.line-bottom {background-color: #4183D7; height: 5px;}
+.copy { margin-top: 20px; text-align: center; }
+.navbar { margin-top: 20px; background: #fff;}
+.navbar-brand img { height: 100%; padding: 0; }
+.title-leis h3 { text-align: center; color: #013243; }
+.tabela-cab { text-align: center; }
+.text { text-align: center; }
+
+.user-img { text-align: center; margin-top: 20px; }
+.criar-lei { text-align: center; margin-top: 20px; margin-bottom: 20px; }
+.link { color: #212529 }
+.leis { background-color: #F8F9FA; }
+.titulo { text-align: center; }
+.lista-leis h3 { text-align: center; }
+
+.img-add { margin-top: 10px; margin-bottom: 10px; }
+.btn-cadastrar { margin-bottom: 20px; }
+.btn-votar { margin-top: 10px; }
+.voto { margin-top: 20px; }

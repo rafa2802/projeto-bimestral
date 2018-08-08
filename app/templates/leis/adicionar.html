@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+   <form class="form-signin" method="POST">
+      <div class="text-center mb-4 img-add">
+        <img class="mb-4 logo" src="/static/imagens/logo.jpg" alt="" width="72" height="72">
+      </div>
+      <div class="form-group">
+        <input name="id_titulo" type="text" id="id_titulo" class="form-control" placeholder="Título" required autofocus>
+        <label for="id_titulo" class="sr-only">Título</label>
+      </div>
+
+      <div class="form-group">
+        <textarea class="form-control" rows="3" placeholder="Descrição" name="id_descricao" id="id_descricao"></textarea>
+        <label for="id_descricao" class="sr-only">Descrição</label>
+      </div>
+
+      <button class="btn btn-lg btn-primary btn-block btn-cadastrar" type="submit">Cadastrar Lei</button>
+    </form>
+    </div>
+</div>
+
+{% endblock %} 

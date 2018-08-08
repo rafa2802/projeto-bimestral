@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sistema de Votação</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/static/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+  
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                  <img alt="Home" src="static/imagens/logo.jpg">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="/leis-em-votacao">Leis em Votação</a></li>
+            <li><a href="#">Resultados</a></li>
+          </ul>
+            {% if usuario %}
+            <div class="login-area navbar-nav navbar-right">
+              <a href="/perfil" class="nav-link navbar-text"><i class="fas fa-user"></i> Bem-vindo(a), {{usuario[0][1]}}</a>
+              <a href="/logout" class="nav-link navbar-text"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+            {% else %}
+            <div class="login-area navbar-nav navbar-right">
+              <a href="/login" class="nav-link navbar-text"><i class="fas fa-user"></i> Login</a>
+              <a href="/cadastro" class="nav-link navbar-text"><i class="fas fa-user-plus"></i> Cadastro</a>
+            </div>
+            {% endif %}
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+  </div>
+<div class="line-bottom"></div>
+{% block content %}
+{% endblock %}
+<div class="line-bottom"></div>
+
+<div class="container">
+  <div class="col-md-12">
+    <div class="copy">
+      <p>&copy; Sistema de Votação 2018</p>
+    </div>
+  </div>
+</div>
+</div>
+  
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>
